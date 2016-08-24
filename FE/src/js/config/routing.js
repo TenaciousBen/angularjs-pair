@@ -1,4 +1,5 @@
-export function routes($stateProvider, $urlRouterProvider) {
+export function routes($locationProvider, $stateProvider, $urlRouterProvider) {
+    $locationProvider.html5Mode(true);
     $urlRouterProvider.otherwise("/hotel");
     $stateProvider
         .state("root", {

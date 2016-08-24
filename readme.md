@@ -5,20 +5,30 @@
 1. Create your own branch
 2. Do as much of the test as you can within the hour
 3. Commit regularly, then push at the end
-
-Run gulp from powershell/git each time you make a change, and head to pair.luxtripper.co.uk to access your site!
+4. Run gulp from powershell/command line each time you make a change
+5. Navigate to pair.luxtripper.co.uk to access your site! (We've already set up an IIS host for you; we're awesome like that.)
 
 ## Tasks
 
-1. Present a view of all hotels, sortable by city or price per night, and filterable by maximum price per night
-2. Present a view of all people, sortable by their budget, and filterable by their maximum budget
-3. Present a view of all of a given person's stays, with the ability to add or remove stays, and a warning if they're over budget
+The following task has already been completed by one of your team members: 
 
-A gulp task will be preconfigured to transpile any ES6 you've used, run any tests you've written, and host the frontend on node.js.
+1. Present a view of all hotels, sortable by city or price per night, and filterable by maximum price per night
+
+Code review the commited code with your pair programming partner, then go on to complete as many of the following as you can:
+
+2. Modify the hotels view to allow a new hotel to be created
+3. Present a view of all people, sortable by their budget, and filterable by their maximum budget
+4. Add a way for a user to navigate between views
+5. Present a view of all of a given person's stays, with the ability to add or remove stays, and a warning if they're over budget
+
+The following gulp tasks are pre-configured for you:
+
+* gulp - transpiles and browserifies all ES6 code down to ES5
+* gulp test - transpiles and runs all tests named *Spec.js in your ./tests/unit-tests directoy
 
 We're particularly interested in seeing how you structure your angular code, and less interested in CSS and design. 
 
-If you get stuck at any point, just ask your pairing partner for help!
+If you get stuck at any point, just hit up Google or ask your pairing partner for help! ... Seriously, we'd way prefer you ask for help than sit there toughing it out and making no progress over some small stumble.
 
 ## Endpoints
 
