@@ -2,10 +2,9 @@
 
 ## Process
 
-1. Clone this repository
-2. Create your own branch
-3. Do as much of the test as you can within the hour
-4. Commit regularly, then push at the end
+1. Create your own branch
+2. Do as much of the test as you can within the hour
+3. Commit regularly, then push at the end
 
 ## Tasks
 
