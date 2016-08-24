@@ -7,6 +7,7 @@ export function routes($stateProvider, $urlRouterProvider) {
         })
         .state("hotel", {
             url: "/hotel",
-            templateUrl: "/public/hotels/hotels.html"
+            templateUrl: "/public/hotels/hotels.html",
+            controller: "HotelsController"
         });
 }

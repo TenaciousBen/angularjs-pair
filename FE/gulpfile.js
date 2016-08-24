@@ -47,7 +47,7 @@ function transpile(entries, destination, name, minify = true) {
 
 //Combines all js in the application referenced by app.js
 gulp.task("combine-js", ["clear-public"], function () {
-    transpile('./src/js/app.js', './public/js/', 'combined.js');
+    transpile('./src/js/app.js', './public/js/', 'combined.js', false);
 });
 
 gulp.task('move-static', ["clear-public"], function () {
@@ -64,15 +64,6 @@ gulp.task('test', ["clear-public", "combine-js", "move-static"], function (done)
         singleRun: true
     }, done).start();
 });
-
-// gulp.task("run-node", ["clear-public", "combine-js", "move-static", "test"], function (cb) {
-//     exec("node index.js", function (err, stdout, stderr) {
-//         console.log(stdout);
-//         console.log(stderr);
-//         cb(err);
-//     });
-// });
-
 // Default task(s).
 gulp.task("default",
     [

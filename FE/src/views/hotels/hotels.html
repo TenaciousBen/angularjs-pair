@@ -1,1 +1,30 @@
-<h3>This is the hotel page!</h3>
+<div class="container" ng-init="init()">
+    <h3>This is the hotel page!</h3>
+
+    <select class="form-control" ng-model="selectedColumn">
+        <option ng-repeat="column in columns" value="{{column}}">{{column}}</option>
+    </select>
+
+    <label for="filterAmount">Filter Amount</label>
+    <input type="number" id="filterAmount" class="form-control" ng-model="filterAmount" placeholder="Filter Amount"/>
+
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>City</th>
+            <th>Price ($)</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="hotel in hotels | orderBy: selectedColumn | greaterThan:'userId':filterAmount">
+            <td>{{hotel.id}}</td>
+            <td>{{hotel.title}}</td>
+            <td>{{hotel.body}}</td>
+            <td>{{hotel.userId | currency }}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>

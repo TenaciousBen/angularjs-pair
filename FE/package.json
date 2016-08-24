@@ -30,6 +30,7 @@
     "karma-chrome-launcher": "^2.0.0",
     "karma-cli": "^1.0.1",
     "karma-jasmine": "^1.0.2",
+    "lodash": "^4.15.0",
     "main-bower-files": "^2.13.1",
     "pump": "^1.0.1",
     "uglify-js": "^2.7.0",
