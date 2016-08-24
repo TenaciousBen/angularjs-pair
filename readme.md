@@ -6,6 +6,8 @@
 2. Do as much of the test as you can within the hour
 3. Commit regularly, then push at the end
 
+Run gulp from powershell/git each time you make a change, and head to pair.luxtripper.co.uk to access your site!
+
 ## Tasks
 
 1. Present a view of all hotels, sortable by city or price per night, and filterable by maximum price per night
