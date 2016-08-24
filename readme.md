@@ -29,14 +29,14 @@ All endpoints are REST endpoints supporting the following verbs:
 
 The following endpoints are supported:
 
-###/Api/Hotel
+###localhost:12345/Api/Hotel
 
 Model contains the following properties: `Id`, `Name`, `City`, `PricePerNight`
 
-###/Api/People
+###localhost:12345/Api/People
 
 Model contains the following properties: `Id`, `Name`, `Age`, `Budget`
 
-###/Api/HotelStay
+###localhost:12345/Api/HotelStay
 
 Model contains the following properties: `Id`, `PersonId`, `HotelId`, `CheckIn`, `CheckOut`
