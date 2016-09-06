@@ -25,6 +25,26 @@ export class HotelsService {
             });
         return deferred.promise;
     }
+
+    postHotel(hotelViewModel){
+        var deferred = this.$q.defer();
+        if (!hotelViewModel.id) hotelViewModel.id = -1;
+        var hotelApi = HotelApiModel.fromViewModel(hotelViewModel);
+        this.$http.post("http://localhost:12345/api/hotel", hotelApi)
+            .then(hotel => {
+                if (!hotel || !hotel.data) {
+                    deferred.reject([]);
+                    return;
+                }
+                var hotelViewModel = HotelViewModel.fromApiModel(hotel.data);
+                deferred.resolve(hotelViewModel);
+            })
+            .catch(error => {
+                console.log(error);
+                deferred.reject(error);
+            });
+        return deferred.promise;
+    }
 }
 
 /**

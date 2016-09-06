@@ -1,4 +1,4 @@
-require("./hotelsService");
+import {HotelViewModel} from "./hotelsService"
 
 export class HotelsController {
     constructor(hotelsService) {
@@ -12,6 +12,11 @@ export class HotelsController {
     getHotels() {
         this.hotelsService.getHotels()
             .then(hotels => this.hotels = hotels);
+    }
+
+    addHotel(hotelName, city){
+        this.hotelsService.postHotel(new HotelViewModel(null, hotelName, city, 0))
+            .then(hotel => this.hotels.push(hotel));
     }
 
     //sets the current filter field, reversing its order if it's already set

@@ -3,8 +3,16 @@
         <h3>Available Hotels</h3>
         <div class="form-group">
             <label for="maxPrice">Maximum Price</label>
-            <input type="number" id="maxPrice" class="form-control"
+            <input type="number" id="maxPrice" class="form-control" placeholder="0"
                    ng-model="hotelsCtrl.maxPriceFilterValue" ng-change="hotelsCtrl.validateMaxPriceFilterValue()" />
+        </div>
+        <div class="form-group">
+            <label for="hotelName">Hotel Name</label>
+            <input id="hotelName" ng-model="hotelName" placeholder="Hilton..." class="form-control"/>
+            <label for="city">City</label>
+            <input id="city" ng-model="city" placeholder="London" class="form-control"/>
+            <button ng-click="hotelsCtrl.addHotel(hotelName, city)" class="btn btn-primary">Add hotel</button>
+
         </div>
     </div>
 
