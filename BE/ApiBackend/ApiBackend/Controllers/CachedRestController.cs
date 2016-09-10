@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Web.Http;
 using ApiBackend.Persistence;
 
@@ -10,14 +8,14 @@ namespace ApiBackend.Controllers
 {
     public class ApiModel
     {
-        public int Id { get; set; }
+        public int? Id { get; set; }
 
-        public ApiModel(int id)
+        public ApiModel(int? id)
         {
             Id = id;
         }
 
-        public ApiModel() : this(-1)
+        public ApiModel() : this(null)
         {
         }
     }
@@ -87,7 +85,7 @@ namespace ApiBackend.Controllers
         /// Virtual method to test whether a given value can be added to the Values list. Defaults
         /// to ensuring that its Id isn't already present in the list.
         /// </summary>
-        protected virtual bool CanAdd(T value) => Values.All(v => v.Id != value.Id);
+        protected virtual bool CanAdd(T value) => !value.Id.HasValue || Values.All(v => v.Id != value.Id.Value);
 
         /// <summary>
         /// Reflectively assigns the values of the properties of the 'to' object with the values
@@ -96,7 +94,8 @@ namespace ApiBackend.Controllers
         private void PatchReflectively(T from, T to)
         {
             if (from == null || to == null || from.GetType() != to.GetType()) throw new Exception("Cannot patch null objects, or objects of mismatched types");
-            var properties = typeof(T).GetProperties();
+            //only patch properties with both getters and setters; this is just for a tech interview, so no need to get fancier than that
+            var properties = typeof(T).GetProperties().Where(p => p.GetMethod != null && p.SetMethod != null);
             foreach (var property in properties) property.SetValue(to, property.GetValue(from));
         }
 
@@ -107,7 +106,7 @@ namespace ApiBackend.Controllers
 
         /// <summary>
         /// Gets the item with the corresponding Id referentially, such that any changes made to
-        /// the returned item will be reflected to the Values list.
+        /// the returned item will propagate to the corresponding item in the Values list.
         /// </summary>
         private T GetReferentially(int id) => Values.FirstOrDefault(v => v.Id == id);
     }

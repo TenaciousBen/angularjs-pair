@@ -4,9 +4,12 @@
 
 #JetBrains IDE folder
 .idea
-FE/public
-FE/bower_components
-FE/node_modules
+FE/ES5/public
+FE/ES5/bower_components
+FE/ES5/node_modules
+FE/ES6/public
+FE/ES6/bower_components
+FE/ES6/node_modules
 BE/ApiBackend/ApiBackend/bin/*
 BE/ApiBackend/ApiBackend/obj/*
 BE/ApiBackend/ApiBackend.Tests/bin/*

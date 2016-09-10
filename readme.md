@@ -1,12 +1,16 @@
 # Frotend Pair Programming
 
+## Versions
+
+This test can be completed in ECMAScript 5 or ECMAScript 6. For the ES5 version of the test, edit the /FE/ES5 project and use the pair5.luxtripper.co.uk test site. For the ES6 version of the test, edit the /FE/ES6 project and use the pair6.luxtripper.co.uk test site.
+
 ## Process
 
 1. Create your own branch
 2. Do as much of the test as you can within the hour
 3. Commit regularly, then push at the end
 4. Run gulp from powershell/command line each time you make a change
-5. Navigate to pair.luxtripper.co.uk to access your site! (We've already set up an IIS host for you; we're awesome like that.)
+5. Navigate to pair6.luxtripper.co.uk to access the ES6 version of the site, or pair5.luxtripper.co.uk for the ES5 version of the site! (We've already set up an IIS host for you; we're awesome like that.)
 
 ## Tasks
 
@@ -23,7 +27,7 @@ Code review the commited code with your pair programming partner, then go on to 
 
 The following gulp tasks are pre-configured for you:
 
-* gulp - transpiles and browserifies all ES6 code down to ES5
+* gulp - creates the combined.js file out of all your sources, and moves all your static assets (transpiling ES6 to ES5 if you're on the ES6 template)
 * gulp test - transpiles and runs all tests named *Spec.js in your ./tests/unit-tests directoy
 
 We're particularly interested in seeing how you structure your angular code, and less interested in CSS and design. 

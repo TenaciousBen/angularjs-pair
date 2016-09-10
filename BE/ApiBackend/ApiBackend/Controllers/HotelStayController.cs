@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Http;
 
 namespace ApiBackend.Controllers
 {
@@ -28,12 +25,19 @@ namespace ApiBackend.Controllers
         public DateTime CheckIn { get; set; }
         public DateTime CheckOut { get; set; }
 
-        public HotelStay(int id, int personId, int hotelId, DateTime checkIn, DateTime checkOut) : base(id)
+        public HotelStay(int? id, int personId, int hotelId, DateTime checkIn, DateTime checkOut) : base(id)
         {
             PersonId = personId;
             HotelId = hotelId;
             CheckIn = checkIn;
             CheckOut = checkOut;
+        }
+        
+        /// <summary>
+        /// Default constructor for the Web API model binder
+        /// </summary>
+        public HotelStay()
+        {
         }
     }
 }

@@ -52,7 +52,7 @@ export class HotelViewModel {
 /**
  * The hotel api model to be returned to the API
  */
-class HotelApiModel {
+export class HotelApiModel {
     constructor(id, name, city, pricePerNight) {
         this.Id = id;
         this.Name = name;

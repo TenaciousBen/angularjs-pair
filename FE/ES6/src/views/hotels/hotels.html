@@ -1,0 +1,29 @@
+<div ng-controller="hotelsController as hotelsCtrl">
+    <div class="jumbotron">
+        <h3>Available Hotels</h3>
+        <div class="form-group">
+            <label for="maxPrice">Maximum Price</label>
+            <input type="number" id="maxPrice" class="form-control"
+                   ng-model="hotelsCtrl.maxPriceFilterValue" ng-change="hotelsCtrl.validateMaxPriceFilterValue()" />
+        </div>
+    </div>
+
+    <table class="table" ng-init="hotelsCtrl.getHotels()">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th class="no-text-selection sortable" ng-click="hotelsCtrl.setFilterField('city')">City</th>
+                <th class="no-text-selection sortable" ng-click="hotelsCtrl.setFilterField('pricePerNight')">Price Per Night</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="hotel in hotelsCtrl.hotels | comparisonFilter:'pricePerNight':'<':hotelsCtrl.maxPriceFilterValue | orderBy:hotelsCtrl.hotelSortField.name:hotelsCtrl.hotelSortField.isReversed ">
+                <td>{{hotel.id}}</td>
+                <td>{{hotel.name}}</td>
+                <td>{{hotel.city}}</td>
+                <td>{{hotel.pricePerNight | currency:"£":2}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -3,7 +3,6 @@ using Microsoft.Owin.Cors;
 using Owin;
 
 [assembly: OwinStartup(typeof(ApiBackend.Startup))]
-
 namespace ApiBackend
 {
     public partial class Startup

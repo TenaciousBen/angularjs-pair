@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Http;
+﻿using System.Collections.Generic;
 
 namespace ApiBackend.Controllers
 {
@@ -27,11 +23,18 @@ namespace ApiBackend.Controllers
         public int Age { get; set; }
         public decimal Budget { get; set; }
 
-        public Person(int id, string name, int age, decimal budget) : base(id)
+        public Person(int? id, string name, int age, decimal budget) : base(id)
         {
             Name = name;
             Age = age;
             Budget = budget;
+        }
+
+        /// <summary>
+        /// Default constructor for the Web API model binder
+        /// </summary>
+        public Person()
+        {
         }
     }
 }
